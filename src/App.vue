@@ -1,6 +1,16 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <PersonalForm />
+  <section :style="{ backgroundColor: color }">
+    <img alt="Vue logo" src="./assets/logo.png" />
+    <PersonalForm
+      :name="name"
+      :age="age"
+      :color="color"
+      @update:name="updateName"
+      @update:age="updateAge"
+      @update:color="updateColor"
+    />
+  </section>
+  <pre>{{ $data }}</pre>
 </template>
 
 <script>
@@ -14,8 +24,19 @@ export default {
     return {
       name: "Daniel",
       age: 18,
-      color: "#09F",
+      color: "#0099FF",
     };
+  },
+  methods: {
+    updateName(val) {
+      this.name = val;
+    },
+    updateAge(val) {
+      this.age = val;
+    },
+    updateColor(val) {
+      this.color = val;
+    },
   },
 };
 </script>

@@ -3,22 +3,43 @@
     <form class="form">
       <div class="control">
         <label for="name">Nombre</label>
-        <input type="text" placeholder="Ingresa tu nombre" />
+        <!-- El evento personalizado puede ser de esta forma... -->
+        <input
+          :value="name"
+          @input="$emit('update:name', $event.target.value)"
+          type="text"
+          placeholder="Ingresa tu nombre"
+        />
       </div>
       <div class="control">
         <label for="age">Edad</label>
-        <input type="number" placeholder="Ingresa tu edad..." />
+        <!-- ... O de esta forma -->
+        <input
+          :value="age"
+          @input="(event) => $emit('update:age', event.target.value)"
+          type="number"
+          placeholder="Ingresa tu edad..."
+        />
       </div>
       <div class="control">
         <label for="color">Color favorito</label>
-        <input type="color" />
+        <input
+          :value="color"
+          @input="(event) => $emit('update:color', event.target.value)"
+          type="color"
+          id="color"
+          placeholder="Selecciona tu color favorito"
+        />
       </div>
     </form>
   </article>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "PersonalForm",
+  props: ["name", "age", "color"],
+};
 </script>
 
 <style scoped>
