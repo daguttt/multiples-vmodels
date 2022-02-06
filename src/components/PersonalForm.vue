@@ -32,4 +32,15 @@ export default {};
   margin: 0 auto;
   width: 75%;
 }
+.control {
+  margin: 20px 0;
+}
+label {
+  display: block;
+}
+input[type="text"],
+input[type="number"] {
+  width: 75%;
+  padding: 0.5rem;
+}
 </style>
