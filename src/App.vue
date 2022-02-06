@@ -15,19 +15,30 @@
 </template>
 
 <script>
+import { ref } from "vue";
 import PersonalForm from "./components/PersonalForm.vue";
 export default {
   name: "App",
   components: {
     PersonalForm,
   },
-  data() {
+  setup() {
+    const name = ref("Daniel"),
+      age = ref(18),
+      color = ref("#0099FF");
     return {
-      name: "Daniel",
-      age: 18,
-      color: "#0099FF",
+      name,
+      age,
+      color,
     };
   },
+  // data() {
+  //   return {
+  //     name: "Daniel",
+  //     age: 18,
+  //     color: "#0099FF",
+  //   };
+  // },
   // methods: {
   //   updateName(val) {
   //     this.name = val;
