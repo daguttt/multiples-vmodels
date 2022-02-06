@@ -1,14 +1,15 @@
 <template>
   <section :style="{ backgroundColor: color }">
     <img alt="Vue logo" src="./assets/logo.png" />
-    <PersonalForm
+    <!-- <PersonalForm
       :name="name"
       :age="age"
       :color="color"
       @update:name="updateName"
       @update:age="updateAge"
       @update:color="updateColor"
-    />
+    /> -->
+    <PersonalForm v-model:name="name" v-model:age="age" v-model:color="color" />
   </section>
   <pre>{{ $data }}</pre>
 </template>
@@ -27,16 +28,16 @@ export default {
       color: "#0099FF",
     };
   },
-  methods: {
-    updateName(val) {
-      this.name = val;
-    },
-    updateAge(val) {
-      this.age = val;
-    },
-    updateColor(val) {
-      this.color = val;
-    },
-  },
+  // methods: {
+  //   updateName(val) {
+  //     this.name = val;
+  //   },
+  //   updateAge(val) {
+  //     this.age = val;
+  //   },
+  //   updateColor(val) {
+  //     this.color = val;
+  //   },
+  // },
 };
 </script>
